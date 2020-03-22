@@ -10,10 +10,10 @@ response = urlopen(url)
 contents = response.read()
 text = contents.decode("utf-8")
 data = json.loads(text)
-try :
+try:
     old_site = data["archived_snapshots"]["closest"]["url"]
     print("Found this copy: ", old_site)
     print("It should appear in your browser now.")
     webbrowser.open(old_site)
-except :
+except:
     print("Sorry, no luck finding", site)
